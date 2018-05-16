@@ -1,6 +1,7 @@
+
 #ifndef WIZARD_H
 #define WIZARD_H
-
+#include <iostream>
 #include <string>
 
 class wizard{
@@ -9,8 +10,8 @@ class wizard{
 		wizard(std::string aName, std::string aHouse);
 		void getName();
 		void getHouse();
-		void getHealth();
-		//virtual float setHealth(flot health);
+		float getHealth();
+		float setHealth(float health);
 		//virtual int castSpell(std::string aName);
 		//virtual bool isDisabled();
 		//virtual void funFacts();
@@ -29,4 +30,3 @@ class wizard{
 //		bool disabled;
 };
 #endif // "WIZARD.H"
-

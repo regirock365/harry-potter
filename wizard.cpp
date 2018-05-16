@@ -1,10 +1,11 @@
+#include <iostream>
 #include "wizard.h"
 #include <string>
 
 wizard::wizard(std::string aName, std::string aHouse){
 	name = aName;
 	house = aHouse;
-	health = -100.0;
+	health = 100.0;
 }
 
 float wizard::setHealth(float aHealth){
@@ -19,6 +20,6 @@ void wizard::getHouse(){
 	std::cout << house << std::endl;
 }
 
-void wizard::getHealth(){
-	std::cout << health << std::endl;
+float wizard::getHealth(){
+	return health;
 }
