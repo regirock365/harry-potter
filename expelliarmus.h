@@ -7,8 +7,8 @@
 class expelliarmus : public spell
 {
 public:
-	
-	void castSpell(wizard obj1);
+	expelliarmus(std::string aName, float aDamage);
+	wizard castSpell(wizard obj1);
 	~expelliarmus();
 };
 

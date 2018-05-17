@@ -1,21 +1,22 @@
 #include "spell.h"
 #include <string>
 #include <iostream>
-#include "wizard.h"
+//#include "wizard.h"
 using namespace std;
 
 //implementation of constructor
 
-spell::spell(string aName){
+spell::spell(string aName, float aDamage){
 	spellName= aName;
 	description= "";
-	Power;
+	Damage= aDamage;
 	Speed;
 	Accuracy;
+	Power;
 }
 
-void spell::castSpell(wizard obj1){
-
+wizard spell::castSpell(wizard obj1){
+	
 }
 
 //setters

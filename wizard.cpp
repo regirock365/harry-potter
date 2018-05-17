@@ -8,7 +8,7 @@ wizard::wizard(std::string aName, std::string aHouse){
 	health = 100.0;
 }
 
-float wizard::setHealth(float aHealth){
+void wizard::setHealth(float aHealth){
 	health = aHealth;
 }
 

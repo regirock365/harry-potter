@@ -12,16 +12,18 @@ protected:
 	//attributes
 	std::string spellName;
 	std::string description;
-	float Power;
+	float Damage;
 	float Speed;
 	float Accuracy;
+	float Power;
+
 
 public:
 	//constructor
-	spell(std::string spellName);
+	spell(std::string spellName, float aDamage);
 
 	//play
-	virtual void castSpell(wizard obj1);
+	virtual wizard castSpell(wizard obj1);
 
 	//setters
 	virtual void set_name(std::string aName);

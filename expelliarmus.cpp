@@ -5,10 +5,15 @@
 #include <string>
 using namespace std;
 
-void expelliarmus::castSpell(wizard obj1){
+expelliarmus::expelliarmus(std::string aName, float aDamage) : spell(aName, aDamage) {
+	
+}
+
+wizard expelliarmus::castSpell(wizard obj1){
 	float c = obj1.getHealth();
-	c=c-10;
+	c=c-Damage;
 	obj1.setHealth(c);
+	return obj1;
 }
 
 expelliarmus::~expelliarmus(){

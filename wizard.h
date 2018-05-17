@@ -11,11 +11,12 @@ class wizard{
 		void getName();
 		void getHouse();
 		float getHealth();
-		float setHealth(float health);
+		void setHealth(float health);
 		//virtual int castSpell(std::string aName);
 		//virtual bool isDisabled();
 		//virtual void funFacts();
 		//virtual int setAttributes(std::string house);
+		float health;
 
 
 	protected:
@@ -23,7 +24,7 @@ class wizard{
 		//int speed;
 		//int intelligence;
 		//int defense;
-		float health;
+		
 		std::string name;
 		std::string house;
 		std::string spellName;
