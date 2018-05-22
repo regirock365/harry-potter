@@ -9,11 +9,12 @@ expelliarmus::expelliarmus(std::string aName, float aDamage) : spell(aName, aDam
 	
 }
 
-wizard expelliarmus::castSpell(wizard obj1){
-	float c = obj1.getHealth();
-	c=c-Damage;
-	obj1.setHealth(c);
-	return obj1;
+wizard expelliarmus::castSpell(wizard castOn, wizard caster){
+	float h = castOn.getHealth();
+	float d = castOn.getDefense();
+	h=h-d*Damage;
+	castOn.setHealth(h);
+	return castOn;
 }
 
 expelliarmus::~expelliarmus(){
