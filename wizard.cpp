@@ -6,20 +6,29 @@ wizard::wizard(std::string aName, std::string aHouse){
 	name = aName;
 	house = aHouse;
 	health = 100.0;
+	defense = 1;
 }
 
 void wizard::setHealth(float aHealth){
 	health = aHealth;
 }
 
-void wizard::getName(){
-	std::cout << name <<std::endl;
+void wizard::setDefense(float aDefense){
+	defense = aDefense;
 }
 
-void wizard::getHouse(){
-	std::cout << house << std::endl;
+std::string wizard::getName(){
+	return name;
+}
+
+std::string wizard::getHouse(){
+	return house;
 }
 
 float wizard::getHealth(){
 	return health;
+}
+
+float wizard::getDefense(){
+	return defense;
 }

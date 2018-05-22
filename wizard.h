@@ -8,10 +8,12 @@ class wizard{
 	
 	public:
 		wizard(std::string aName, std::string aHouse);
-		void getName();
-		void getHouse();
+		std::string getName();
+		std::string getHouse();
 		float getHealth();
 		void setHealth(float health);
+		float getDefense();
+		void setDefense(float defense);
 		//virtual int castSpell(std::string aName);
 		//virtual bool isDisabled();
 		//virtual void funFacts();
@@ -24,7 +26,7 @@ class wizard{
 		//int speed;
 		//int intelligence;
 		//int defense;
-		
+		float defense;
 		std::string name;
 		std::string house;
 		std::string spellName;
