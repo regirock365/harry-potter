@@ -5,8 +5,10 @@
 
 gui::gui(int h, int w) {
 	initscr();
-	win = newwin(h, w, 1, 1);
-	print(h - 2, "Press 'Enter' to continue");
+	height = h;
+	width = w;
+	win = newwin(height, width, 1, 1);
+	print(h - 2, "Press 'Enter' to continue", "middle");
 	refresh();
 
 	box(win, '*', '*');
@@ -24,8 +26,23 @@ void gui::move(int y, int x) {
 	this->refresh();
 }
 
-void gui::print(int line, std::string text) {
-	this->move(line, 1);
+// void gui::print(int line, std::string text) {
+// 	this->move(line, 1);
+// 	wclrtoeol(win);
+// 	wprintw(win, text.c_str());
+// 	this->refresh();
+// 	this->get();
+// }
+
+void gui::print(int line, std::string text, std::string position) {
+	int x = 1;
+	if (position == "middle") {
+		x = (width - text.size()) / 2;
+	} else if (position == "right") {
+		x = width - text.size();
+	}
+
+	this->move(line, x);
 	wclrtoeol(win);
 	wprintw(win, text.c_str());
 	this->refresh();

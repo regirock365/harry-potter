@@ -8,15 +8,18 @@ class gui
 {
 public:
 	gui(int h, int w);
-	void move(int y, int x);
-	// void print(std::string text);
-	void print(int line, std::string text);
+	// void print(int line, std::string text);
+	void print(int line, std::string text, std::string position);
 	void get();
 	~gui();
 
 private:
 	WINDOW * win;
+	int height;
+	int width;
+
 	void refresh();
+	void move(int y, int x);
 };
 
 #endif

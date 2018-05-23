@@ -26,9 +26,9 @@ int main(int argc, char ** argv) {
 	// terminal->get();
 	// terminal->print("Harry Potter!!");
 	// terminal->print(2, "!!");
-	terminal->print(3, "Welcome To Harry Potter");
-	terminal->print(3, "The rules are simple");
-	terminal->print(3, "don't lose :)");
+	terminal->print(1, "Welcome To Harry Potter", "middle");
+	terminal->print(2, "The rules are simple", "");
+	terminal->print(3, "don't lose :)", "right");
 	// terminal->print(3, "11");
 
 	delete terminal;
