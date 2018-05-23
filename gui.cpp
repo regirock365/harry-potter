@@ -5,6 +5,7 @@
 
 gui::gui(int h, int w) {
 	initscr();
+	noecho();
 	height = h;
 	width = w;
 	win = newwin(height, width, 1, 1);
