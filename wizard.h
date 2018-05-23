@@ -14,10 +14,6 @@ class wizard{
 		void setHealth(float health);
 		float getDefense();
 		void setDefense(float defense);
-		//virtual int castSpell(std::string aName);
-		//virtual bool isDisabled();
-		//virtual void funFacts();
-		//virtual int setAttributes(std::string house);
 		float health;
 
 

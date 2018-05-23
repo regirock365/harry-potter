@@ -8,7 +8,7 @@ class protego : public spell
 {
 public:
 	protego(std::string aName, float aDamage);
-	wizard castSpell(wizard castOn, wizard caster);
+	void castSpell(wizard* castOn, wizard* caster);
 	~protego();
 };
 

@@ -9,20 +9,20 @@ protego::protego(std::string aName, float aDamage) : spell(aName, aDamage) {
 	
 }
 
-wizard protego::castSpell(wizard castOn, wizard caster){
-	float c = caster.getDefense();
-	float h = caster.getHealth();
+void protego::castSpell(wizard* castOn, wizard* caster){
+	float c = caster->getDefense();
+	float h = caster->getHealth();
 	c=c-Damage;
 	h=h+10;
 
 	//check if defense has gotten too strong
 	if(c>0.5){
-		caster.setDefense(c);
+		caster->setDefense(c);
 	}	
 	if(h<90){
-		caster.setHealth(c);
+		caster->setHealth(h);
 	}
-	return caster;
+	//return caster;
 }
 
 protego::~protego(){

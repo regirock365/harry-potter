@@ -1,14 +1,15 @@
 #ifndef SPELL_H
 #define SPELL_H
 #include "wizard.h"
+#include <cstdlib>
+#include <iostream>
+#include <ctime>
 
 #include <string>
 
 class spell
 {
 protected:
-	
-
 	//attributes
 	std::string spellName;
 	std::string description;
@@ -23,14 +24,14 @@ public:
 	spell(std::string spellName, float aDamage);
 
 	//play
-	virtual wizard castSpell(wizard obj1);
+	 virtual void castSpell(wizard* castOn, wizard* caster)=0;
 
 	//setters
-	virtual void set_name(std::string aName);
-	virtual void set_description(std::string aDescription);
-	virtual void set_power(float aPower);
-	virtual void set_speed(float aSpeed);
-	virtual void set_accuracy(float aAccuracy);
+	 void set_name(std::string aName);
+	 void set_description(std::string aDescription);
+	 void set_power(float aPower);
+	 void set_speed(float aSpeed);
+	 void set_accuracy(float aAccuracy);
 
 	//getters
 	float get_power();

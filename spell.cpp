@@ -10,12 +10,12 @@ spell::spell(string aName, float aDamage){
 	spellName= aName;
 	description= "";
 	Damage= aDamage;
-	Speed;
-	Accuracy;
-	Power;
+	// Speed;
+	// Accuracy;
+	// Power;
 }
 
-wizard spell::castSpell(wizard obj1){
+void spell::castSpell(wizard* castOn, wizard* caster){
 	
 }
 
