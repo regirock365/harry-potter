@@ -39,7 +39,7 @@ void gui::print(int line, std::string text, std::string position) {
 	if (position == "middle") {
 		x = (width - text.size()) / 2;
 	} else if (position == "right") {
-		x = width - text.size();
+		x = width - text.size() - 1;
 	}
 
 	this->move(line, x);
