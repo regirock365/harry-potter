@@ -9,7 +9,7 @@ gui::gui(int h, int w) {
 	height = h;
 	width = w;
 	win = newwin(height, width, 1, 1);
-	print(h - 2, "Press 'Enter' to continue", "middle");
+	print(h - 2, "Press 'Any key' to continue", "middle");
 	refresh();
 
 	box(win, '*', '*');
@@ -27,13 +27,6 @@ void gui::move(int y, int x) {
 	this->refresh();
 }
 
-// void gui::print(int line, std::string text) {
-// 	this->move(line, 1);
-// 	wclrtoeol(win);
-// 	wprintw(win, text.c_str());
-// 	this->refresh();
-// 	this->get();
-// }
 
 void gui::print(int line, std::string text, std::string position) {
 	int x = 1;

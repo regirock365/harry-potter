@@ -1,4 +1,3 @@
-
 #ifndef WIZARD_H
 #define WIZARD_H
 #include <iostream>
@@ -7,25 +6,17 @@
 class wizard{
 	
 	public:
-		wizard(std::string aName, std::string aHouse);
-		std::string getName();
-		std::string getHouse();
-		float getHealth();
-		void setHealth(float health);
-		float getDefense();
-		void setDefense(float defense);
+		wizard(std::string aName); //constructur that takes in name of wizard
+		std::string getName();  //retrieves the name of a wizard
+		float getHealth(); //retrieves the health of a wizard
+		void setHealth(float health); //change the health of a wizard
+		float getDefense(); //retrieves the defense of a wizard
+		void setDefense(float defense); //change the defense of a wizard
 		float health;
 
 
 	protected:
-		//int power;
-		//int speed;
-		//int intelligence;
-		//int defense;
 		float defense;
 		std::string name;
-		std::string house;
-		std::string spellName;
-//		bool disabled;
 };
 #endif // "WIZARD.H"

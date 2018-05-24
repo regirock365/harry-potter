@@ -2,6 +2,7 @@
 #define PROTEGO_H
 
 #include "spell.h"
+#include <string>
 
 
 class protego : public spell

@@ -2,7 +2,7 @@
 #define EXPELLIARMUS_H
 
 #include "spell.h"
-
+#include <string>
 
 class expelliarmus : public spell
 {
