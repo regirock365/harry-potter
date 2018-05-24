@@ -29,9 +29,12 @@ void stupefy::castSpell(wizard* castOn, wizard* caster, gui* terminal){
 		terminal->print(14, "Attack Missed", "right");
 		// std::cout << "Attack missed" << std::endl;
 	}
+	if (castOn->getName() == "Harry") {
+		terminal->print(25, "Harry's Health: " + std::to_string(castOn->getHealth()), "right");
+	} else {
+		terminal->print(26, "Draco's Health: " + std::to_string(castOn->getHealth()), "right");
+	}
 	terminal->clearLine(14);
-
-	//return castOn;
 }
 
 stupefy::~stupefy(){

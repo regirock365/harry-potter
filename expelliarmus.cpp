@@ -21,14 +21,20 @@ srand(time(0));
 		castOn->setHealth(h);
 		terminal->print(14, "Successful Attack", "right");
 		terminal->clearLine(14);
-		// std::cout << "Successful Attack." << std::endl;
 
 	}
 	else{
 		terminal->print(14, "Attack Missed", "right");
-		// std::cout << "Attack missed" << std::endl;
 	}
+	// clear the line after we're done with it
 	terminal->clearLine(14);
+
+
+	if (castOn->getName() == "Harry") {
+		terminal->print(25, "Harry's Health: " + std::to_string(castOn->getHealth()), "right");
+	} else {
+		terminal->print(26, "Draco's Health: " + std::to_string(castOn->getHealth()), "right");
+	}
 }
 
 expelliarmus::~expelliarmus(){

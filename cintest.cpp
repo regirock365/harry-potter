@@ -3,8 +3,6 @@
 #include "expelliarmus.h"
 #include "protego.h"
 #include "stupefy.h"
-#include "harry.h"
-#include "draco.h"
 #include <ctype.h>
 #include <iostream>
 #include "gui.h"
@@ -16,6 +14,9 @@ extern bool endGame(wizard obj, int move, int player, gui* terminal);
 extern bool playerAttack(int move, int player, wizard* player1, wizard* player2, expelliarmus spell1, protego spell2, stupefy spell3, gui* terminal);
 extern void playGame(gui* terminal);
 
+/*
+main creates a box user-interface using the gui class to dislpay a welcome screen and display the rules of the game
+*/
 int main(){
 
 	gui* terminal = new gui(30,100);
