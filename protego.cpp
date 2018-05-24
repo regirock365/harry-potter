@@ -1,6 +1,7 @@
 #include "protego.h"
 #include "spell.h"
 #include "wizard.h"
+#include "gui.h"
 
 #include <string>
 using namespace std;
@@ -9,19 +10,29 @@ protego::protego(std::string aName, float aDamage) : spell(aName, aDamage) {
 	
 }
 
-void protego::castSpell(wizard* castOn, wizard* caster){
+void protego::castSpell(wizard* castOn, wizard* caster, gui* terminal){
 	float c = caster->getDefense();
 	float h = caster->getHealth();
-	c=c-Damage;
-	h=h+10;
+	c=c+0.2;
+	if (!(h >= 100)) {
+		if (h >= 91) {
+			h=100;
+		} else {
+			h=h+10;
+		}
+		caster->setHealth(h);
+		terminal->print(20, caster->getName() + "'s health increased to: " + std::to_string(caster->getHealth()), "left");
+	} else {
+		terminal->print(20, caster->getName() + "'s health couldn't be increased", "left");
+	}
 
 	//check if defense has gotten too strong
-	if(c>0.5){
+	if(c<=2){
 		caster->setDefense(c);
+		terminal->print(20, caster->getName() + "'s defense has risen to: " + std::to_string(caster->getDefense()), "left");
 	}	
-	if(h<90){
-		caster->setHealth(h);
-	}
+	terminal->clearLine(20);
+
 	//return caster;
 }
 

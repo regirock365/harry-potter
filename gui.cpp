@@ -1,6 +1,7 @@
 #include "gui.h"
 
 #include <ncurses.h>
+#include <unistd.h>
 #include <string>
 
 gui::gui(int h, int w) {
@@ -9,31 +10,16 @@ gui::gui(int h, int w) {
 	height = h;
 	width = w;
 	win = newwin(height, width, 1, 1);
-	print(h - 2, "Press 'Enter' to continue", "middle");
 	refresh();
 
 	box(win, '*', '*');
 	this->refresh();
-	getchar();
-	// wprintw(win, "HARRY POTTER!!!");
-	// refresh a specific window
-
-	// waits for user input, returns int value of that key
-	// int c = getch();
 }
 
 void gui::move(int y, int x) {
 	wmove(win, y,x);
-	this->refresh();
+	// this->refresh();
 }
-
-// void gui::print(int line, std::string text) {
-// 	this->move(line, 1);
-// 	wclrtoeol(win);
-// 	wprintw(win, text.c_str());
-// 	this->refresh();
-// 	this->get();
-// }
 
 void gui::print(int line, std::string text, std::string position) {
 	int x = 1;
@@ -43,16 +29,50 @@ void gui::print(int line, std::string text, std::string position) {
 		x = width - text.size() - 1;
 	}
 
-	this->move(line, x);
+	this->move(line, 1);
 	wclrtoeol(win);
+	this->move(line, x);
 	wprintw(win, text.c_str());
 	this->refresh();
-	this->get();
+	flushinp();
+	sleep(1);
+	// this->get();
 }
 
-void gui::get() {
+int gui::get() {
 	int c = wgetch(win);
+	int output = 0;
+
+	switch(c) {
+		case 49:
+			output = 1;
+			break;
+		case 50:
+			output = 2;
+			break;
+		case 51:
+			output = 3;
+			break;
+		case 52:
+			output = 4;
+			break;
+	}
+
+	return output;
 	// this->refresh();
+}
+
+int gui::getHeight() {
+	return height;
+}
+
+int gui::getWidth() {
+	return width;
+}
+
+void gui::clearLine(int line) {
+	this->move(line, 1);
+	wclrtoeol(win);
 }
 
 void gui::refresh() {

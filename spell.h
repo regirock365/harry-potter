@@ -1,6 +1,7 @@
 #ifndef SPELL_H
 #define SPELL_H
 #include "wizard.h"
+#include "gui.h"
 #include <cstdlib>
 #include <iostream>
 #include <ctime>
@@ -24,7 +25,7 @@ public:
 	spell(std::string spellName, float aDamage);
 
 	//play
-	 virtual void castSpell(wizard* castOn, wizard* caster)=0;
+	 virtual void castSpell(wizard* castOn, wizard* caster, gui* terminal)=0;
 
 	//setters
 	 void set_name(std::string aName);

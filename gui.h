@@ -8,9 +8,11 @@ class gui
 {
 public:
 	gui(int h, int w);
-	// void print(int line, std::string text);
 	void print(int line, std::string text, std::string position);
-	void get();
+	int get();
+	int getHeight();
+	int getWidth();
+	void clearLine(int line);
 	~gui();
 
 private:

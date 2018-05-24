@@ -15,7 +15,7 @@ spell::spell(string aName, float aDamage){
 	// Power;
 }
 
-void spell::castSpell(wizard* castOn, wizard* caster){
+void spell::castSpell(wizard* castOn, wizard* caster, gui* terminal){
 	
 }
 
